@@ -2,17 +2,22 @@
 
 ## Introduction :
 
-This is a management support class, making it easier and more effective to textures.</br>
-Advantages:</br>
--Manage by name (string)
--Simple creation manipulation
--Collision support (normal , cricle , pixel perfect)
+This is a management support class, making it easier and more effective to textures.
+
+###### Advantages:
+- Manage by name (string)
+- Simple creation manipulation
+- Collision support (normal , cricle , pixel perfect)
 
 PS: These are just my subjective opinions in the process of capturing and handling events with SFML
 ## Version :
 - V1.0 
 ## Content:
 
+Advantages:</br>
+- Manage by name (string)
+- Simple creation manipulation
+- Collision support (normal , cricle , pixel perfect)
 
 ## Update : 
 
