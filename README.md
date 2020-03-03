@@ -2,8 +2,8 @@
 
 ## Introduction :
 
-This is a management support class, making it easier and more effective to textures
-Advantages:
+This is a management support class, making it easier and more effective to textures.</br>
+Advantages:</br>
 -Manage by name (string)
 -Simple creation manipulation
 -Collision support (normal , cricle , pixel perfect)
