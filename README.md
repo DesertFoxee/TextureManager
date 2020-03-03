@@ -4,7 +4,7 @@
 
 This is a management support class, making it easier and more effective to textures.
 
-###### Advantages:
+##### Advantages:
 
 - Manage by name (string)
 
