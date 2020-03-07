@@ -1,4 +1,4 @@
-## Texture manager 
+# Texture manager 
 
 ## Introduction :
 
