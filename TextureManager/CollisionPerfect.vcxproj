@@ -159,12 +159,18 @@
     <ClCompile Include="ImageFunc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="xml\tinystr.cpp" />
+    <ClCompile Include="xml\tinyxml.cpp" />
+    <ClCompile Include="xml\tinyxmlerror.cpp" />
+    <ClCompile Include="xml\tinyxmlparser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BitmaskManager.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="ImageFunc.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="xml\tinystr.h" />
+    <ClInclude Include="xml\tinyxml.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.md" />

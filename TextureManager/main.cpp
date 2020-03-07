@@ -67,16 +67,10 @@ void setup() {
 
 	window.create(sf::VideoMode(screen_width, screen_height), title, sf::Style::Default, settings);
 
-
-	textures.createTexture("human", "images/AkuAku.png", true);
-	textures.createTexture("monster", "images/CrashBandicoot.png", true);
-	textures.createTexture("ball", "images/red_ball.png");
-
-
+	textures.loadTextureFromXML("assets/d_texture.xml");
+	
 	human.setTexture(*textures.getTexture("human"));
 	monster.setTexture(*textures.getTexture("monster"));
-	ball.setTexture(*textures.getTexture("ball"));
-	ball2.setTexture(*textures.getTexture("ball"));
 
 	loc = { 100 ,100 };
 	vec = { 0 ,0 };
@@ -122,9 +116,9 @@ void update(float dt) {
 
 
 
-	ball.setPosition(loc);
+	human.setPosition(loc);
 
-	if (Collision::cricle( &ball, &ball2)) {
+	if (Collision::perfect(textures.getBitmask() , &human, &monster)) {
 		cout << "Collision" << endl;
 	}
 	else {
@@ -134,23 +128,23 @@ void update(float dt) {
 }
 
 void draw() {
-	//auto h = human.getGlobalBounds();
-	//drawRectangle({ h.left , h.top }, h.width, h.height);
-	//window.draw(human);
+	auto h = human.getGlobalBounds();
+	drawRectangle({ h.left , h.top }, h.width, h.height);
+	window.draw(human);
 
-	//auto m = monster.getGlobalBounds();
-	//window.draw(monster);
-	//drawRectangle({ m.left , m.top }, m.width, m.height);
+	auto m = monster.getGlobalBounds();
+	window.draw(monster);
+	drawRectangle({ m.left , m.top }, m.width, m.height);
 
 	
-	auto m = ball.getGlobalBounds();
+	/*auto m = ball.getGlobalBounds();
 	window.draw(ball);
 	drawRectangle({ m.left , m.top }, m.width, m.height);
 
 
 	auto h = ball2.getGlobalBounds();
 	window.draw(ball2);
-	drawRectangle({ h.left , h.top }, h.width, h.height);
+	drawRectangle({ h.left , h.top }, h.width, h.height);*/
 
 
 }
@@ -213,7 +207,6 @@ int main() {
 	}
 	return 0;
 }
-
 
 
 

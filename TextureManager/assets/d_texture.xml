@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding=""?>
+<textureatlas>
+    <texture name ="human" path="images/human.png" 
+        createmask="false" spritesheet="">
+    </texture>
+
+    <texture name ="monster" path ="images/monster.png" 
+    createmask="false" spritesheet="">
+    </texture>
+
+    <texture name ="redball" path ="images/red_ball.png" 
+    createmask="false" spritesheet="">
+    </texture>
+
+    <texture name ="a" path ="images/AkuAku.png" 
+    createmask="true" spritesheet="">
+    </texture>
+
+    <texture name ="b" path ="images/CrashBandicoot.png" 
+    createmask="true" spritesheet="">
+    </texture>
+</textureatlas>

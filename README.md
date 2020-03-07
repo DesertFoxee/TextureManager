@@ -1,4 +1,4 @@
-## Title : Texture manager 
+## Texture manager 
 
 ## Introduction :
 
@@ -12,10 +12,30 @@ This is a management support class, making it easier and more effective to textu
 
 - Collision support (normal , cricle , pixel perfect)
 
-PS: These are just my subjective opinions in the process of capturing and handling events with SFML
+- Load texture from file (.xml) <br>
+	```xml 
+	<textureatlas>
+		<texture name={name} path={path_image_source} createmask={sp_collision_perfect} 
+			spritesheet={path_data_sprite}>
+		</texture>
+	</textureatlas>
+	```
+	Ex: [d_texture.xml](TextureManager/TextureManager/assets/d_texture.xml)<br>
+
+**PS**: These are just my subjective opinions in the process of capturing and handling events with SFML
 ## Version :
-- V1.0 
++ v1.0 
++ v1.1.2
 ## Content:
+##### Version 1.0
+	-> Create
+	-> Collision
+
+##### Version 1.1.2
+	-> Load data texture from the xml file
+	-> Update texturemanger
+	-> Load spritesheet
+	-> Fix collision cricle 
 
 ## Update : 
 
