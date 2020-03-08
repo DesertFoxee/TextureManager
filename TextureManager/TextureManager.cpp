@@ -21,8 +21,124 @@ string TextureManager::getPathSpriteSheet(const string name) const {
 	return "";
 }
 
+unordered_map<string, vector<TextureManager::u_rect>>* TextureManager::getRectTexture(const string name) const {
+	auto iter_finder = textures.find(name);
+	if (iter_finder != textures.end()) {
+		return &(iter_finder->second->m_rect);
+	}
+	return nullptr;
+}
+
 
 #ifdef TINYXML_INCLUDED
+
+void TextureManager::loadSpriteSheet(const string name, const char* path_spritesheet) {
+	auto iter_finder = textures.find(name);
+
+	if (iter_finder != textures.end()) {
+		TiXmlDocument doc(path_spritesheet);
+
+		if (!doc.LoadFile()) {
+			cout << doc.ErrorDesc() << endl;
+			return;
+		}
+
+		TiXmlHandle docHandle(&doc);
+		TiXmlElement* anim_sheet = docHandle.FirstChildElement("spritesheet").FirstChildElement("animation").ToElement();
+
+		iter_finder->second->m_rect.clear();
+
+		for (anim_sheet; anim_sheet; anim_sheet = anim_sheet->NextSiblingElement("animation")) {
+
+			const char* anim_name = anim_sheet->Attribute("name");
+
+			if (anim_name != NULL) {
+				vector<u_rect> anim_subsprite;
+				unsigned int offset_x, offset_y, width ,height ,speed;
+				TiXmlElement* subsprite = anim_sheet->FirstChildElement("subsprite")->ToElement();
+				for (subsprite; subsprite; subsprite = subsprite->NextSiblingElement("subsprite")) {
+
+					if (subsprite->QueryUnsignedAttribute("x", &offset_x) == TIXML_SUCCESS
+						&& subsprite->QueryUnsignedAttribute("y", &offset_y) == TIXML_SUCCESS
+						&& subsprite->QueryUnsignedAttribute("width", &width) == TIXML_SUCCESS
+						&& subsprite->QueryUnsignedAttribute("height", &height) == TIXML_SUCCESS
+						&& subsprite->QueryUnsignedAttribute("speed", &speed) == TIXML_SUCCESS) {
+
+						u_rect sub;
+						sub.rect.left = offset_x;
+						sub.rect.top = offset_y;
+						sub.rect.width = width;
+						sub.rect.height = height;
+						sub.speed = speed;
+						anim_subsprite.push_back(sub);
+					}
+				}
+				iter_finder->second->m_rect.insert(std::make_pair(string(name), anim_subsprite));
+			}
+		}
+	}
+}
+
+void TextureManager::loadSpriteSheet(const string name) {
+	auto iter_finder = textures.find(name);
+
+	if (iter_finder != textures.end() && !iter_finder->second->p_spritesheet.empty()) {
+		TiXmlDocument doc(iter_finder->second->p_spritesheet.c_str());
+
+		if (!doc.LoadFile()) {
+			cout << doc.ErrorDesc() << endl;
+			return;
+		}
+
+		TiXmlHandle docHandle(&doc);
+		TiXmlElement* anim_sheet = docHandle.FirstChildElement("spritesheet").FirstChildElement("animation").ToElement();
+
+		iter_finder->second->m_rect.clear();
+
+		for (anim_sheet; anim_sheet; anim_sheet = anim_sheet->NextSiblingElement("animation")) {
+
+			const char* anim_name = anim_sheet->Attribute("name");
+
+			if (anim_name != NULL) {
+				vector<u_rect> anim_subsprite;
+				unsigned int offset_x, offset_y, width, height, speed;
+
+				TiXmlElement* subsprite = anim_sheet->FirstChildElement("subsprite")->ToElement();
+				for (subsprite; subsprite; subsprite = subsprite->NextSiblingElement("subsprite")) {
+
+					if (subsprite->QueryUnsignedAttribute("x", &offset_x) == TIXML_SUCCESS
+						&& subsprite->QueryUnsignedAttribute("y", &offset_y) == TIXML_SUCCESS
+						&& subsprite->QueryUnsignedAttribute("width", &width) == TIXML_SUCCESS
+						&& subsprite->QueryUnsignedAttribute("height", &height) == TIXML_SUCCESS
+						&& subsprite->QueryUnsignedAttribute("speed", &speed) == TIXML_SUCCESS) {
+
+						u_rect sub;
+						sub.rect.left = offset_x;
+						sub.rect.top = offset_y;
+						sub.rect.width = width;
+						sub.rect.height = height;
+						sub.speed = speed;
+						anim_subsprite.push_back(sub);
+					}
+				}
+				iter_finder->second->m_rect.insert(std::make_pair(string(name), anim_subsprite));
+			}
+		}
+	}
+
+}
+void TextureManager::loadSpriteSheet() {
+	for (auto m_texture = textures.begin(); m_texture != textures.end(); m_texture++) {
+
+		string path_spritesheet  = m_texture->second->p_spritesheet;
+
+		if (!path_spritesheet.empty()) {
+			this->loadSpriteSheet(m_texture->first);
+		}
+	}
+
+
+}
 bool TextureManager::loadTextureFromXML(const char* pathXML) {
 
 	TiXmlDocument doc(pathXML);

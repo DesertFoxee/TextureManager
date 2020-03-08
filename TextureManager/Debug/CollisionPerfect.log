@@ -1,4 +1,10 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (CollisionPerfect.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  ImageFunc.cpp
+F:\SFML\TextureManager\TextureManager\ImageFunc.cpp(140,23): warning C4018: '<': signed/unsigned mismatch
+F:\SFML\TextureManager\TextureManager\ImageFunc.cpp(140,48): warning C4018: '<': signed/unsigned mismatch
+  TextureManager.cpp
+F:\SFML\TextureManager\TextureManager\TextureManager.cpp(72,19): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+F:\SFML\TextureManager\TextureManager\TextureManager.cpp(120,19): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
   main.cpp
 F:\SFML\TextureManager\TextureManager\Collision.h(40,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 F:\SFML\TextureManager\TextureManager\Collision.h(41,18): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
@@ -16,14 +22,16 @@ F:\SFML\TextureManager\TextureManager\Collision.h(73,69): warning C4244: 'argume
 F:\SFML\TextureManager\TextureManager\Collision.h(73,66): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 F:\SFML\TextureManager\TextureManager\Collision.h(74,69): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 F:\SFML\TextureManager\TextureManager\Collision.h(74,66): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
-F:\SFML\TextureManager\TextureManager\main.cpp(80,29): warning C4305: 'argument': truncation from 'double' to 'T'
+F:\SFML\TextureManager\TextureManager\main.cpp(83,29): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
-F:\SFML\TextureManager\TextureManager\main.cpp(84,31): warning C4305: 'argument': truncation from 'double' to 'T'
+F:\SFML\TextureManager\TextureManager\main.cpp(87,31): warning C4305: 'argument': truncation from 'double' to 'T'
           with
           [
               T=float
           ]
+  Generating Code...
+F:\SFML\TextureManager\TextureManager\TextureManager.cpp(174): warning C4715: 'TextureManager::loadTextureFromXML': not all control paths return a value
   CollisionPerfect.vcxproj -> F:\SFML\TextureManager\Debug\TextureManager.exe

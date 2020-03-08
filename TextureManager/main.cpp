@@ -3,7 +3,8 @@
 #include "ImageFunc.h"
 #include "TextureManager.h"
 #include "Collision.h"
-
+#include <iostream>
+#include "xml/tinyxml.h"
 
 using namespace sf;
 using namespace std;
@@ -68,7 +69,9 @@ void setup() {
 	window.create(sf::VideoMode(screen_width, screen_height), title, sf::Style::Default, settings);
 
 	textures.loadTextureFromXML("assets/d_texture.xml");
-	
+	textures.loadSpriteSheet();
+
+
 	human.setTexture(*textures.getTexture("human"));
 	monster.setTexture(*textures.getTexture("monster"));
 
@@ -207,7 +210,3 @@ int main() {
 	}
 	return 0;
 }
-
-
-
-

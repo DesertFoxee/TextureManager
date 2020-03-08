@@ -21,11 +21,23 @@ This is a management support class, making it easier and more effective to textu
 	</textureatlas>
 	```
 	Ex: [d_texture.xml](TextureManager/TextureManager/assets/d_texture.xml)<br>
+- Load Spritesheet from the xml file 
+	```xml 
+	<spritesheet>
+		<animation name="animation_name">
+			<subsprite x="left" y="right" width="widhtRect" height="heighRect" >
+				
+			</subsprite>
+		</animation>
+	</spritesheet>
+	```
+	Example: [human.xml](TextureManager/TextureManager/spritesheets/human.xml)
 
 **PS**: These are just my subjective opinions in the process of capturing and handling events with SFML
 ## Version :
 + v1.0 
 + v1.1.2
++ v1.1.3
 ## Content:
 ##### Version 1.0
 	-> Create
@@ -36,6 +48,8 @@ This is a management support class, making it easier and more effective to textu
 	-> Update texturemanger
 	-> Load spritesheet
 	-> Fix collision cricle 
+##### Version 1.1.3
+	-> Update load intRect texture
 
 ## Update : 
 

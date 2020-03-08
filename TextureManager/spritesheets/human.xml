@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding=""?>
+<spritesheet>
+    <animation name ="walk">
+        <subsprite x = "0" y ="0" width="12"  height ="12"  speed ="1"></subsprite>
+        <subsprite x = "0" y ="0" width="12"  height ="12" speed ="1"></subsprite>
+        <subsprite x = "0" y ="0" width="12"  height ="12" speed ="1"></subsprite>
+    </animation>
+
+    <animation name ="jump">
+        <subsprite x = "0" y ="0" width="12"  height ="12" speed ="1"></subsprite>
+        <subsprite x = "0" y ="0" width="12"  height ="12" speed ="a1"></subsprite>
+        <subsprite x = "0" y ="0" width="12"  height ="12" speed ="1"></subsprite>
+        <subsprite x = "0" y ="0" width="12"  height ="12" speed ="1" ></subsprite>
+    </animation>
+
+    <sdfete>
+    </sdfete>
+
+</spritesheet>
